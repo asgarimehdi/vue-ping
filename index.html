@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>مانیتورینگ شبکه بهداشت</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        
+        <div id="app">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- <button @click="addItem" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Add an item</button> -->
+                    <button @click="toggleFilter" class="btn btn-outline-primary">فیلتر</button>
+                    <button @click="togglePicker" class="btn btn-outline-primary">گزینه انتخاب ستون</button>
+                    <button @click="toggleSelect" class="btn btn-outline-primary">انتخاب ستون</button>
+                    <button @click="togglePagination" class="btn btn-outline-primary">صفحه بندی</button>
+                    <button @click="toggleOnline" class="btn btn-outline-primary">نمایش همه</button>
+                </div>
+                <br/><br/>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <vue-bootstrap-table
+                            :columns="columns"
+                            :values="values"
+                            :show-filter="showFilter"
+                            :show-column-picker="showPicker"
+                            :selectable="showSelect"
+                            :paginated="paginated"
+                            :multi-column-sortable="multiColumnSortable"
+                            :ajax="ajax"
+                    >
+                    </vue-bootstrap-table>
+                </div>
+            </div>
+           <!--
+            <div class="row">
+                <div class="col-12">
+                <h2>Events Received</h2>
+                    <div>
+                        {{ logging }}
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/vue2-bootstrap-table2.umd.js"></script>
+    <script src="index.js"></script>
+    <script src="node_modules\axios\dist\axios.js"></script>
+</body>
+</html>
